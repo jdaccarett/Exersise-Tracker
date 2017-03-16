@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Fit Tracker</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8"> <!-- character encoding -->
+        <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"> <!-- Display webpage in edge mode/IE in highest supported document mode -->
+        <meta name=viewport content="width=device-width, initial-scale=1"> <!-- Optimizations for mobile devices -->
+
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+        <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"</script>
+        <![endif]-->
+    </head>
+
+    <body>
+<section id="hero">
+    <div class="container">
+
+        <nav class="navbar alignRight">
+            <ul class="nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+
+    <div class="form-group"> 
+ 
+        <form action="/update"> 
+  
+         <h3>Edit your Workout</h3>
+ 
+
+
+<h2>Update those exercise</h2>
+<form action ="/update">
+  <label for="name">Name:</label>
+  <input id="name" type="text" name="name" value="{{results.[0].name}}">
+  <label for="reps">Reps:</label>
+  <input id="reps" type="text" name="reps" value="{{results.[0].reps}}">
+  <label for="weight">Weight:</label>
+  <input id="weight" type="text" name="weight" value="{{results.[0].weight}}">
+  <label for="lbs">Enter 0 for lbs 1 for kgs</label>
+  <input id="lbs" type="text" name="lbs" value="{{results.[0].lbs}}">
+  <br/>
+  <input type="hidden" name="id" value="{{results.[0].id}}">
+  
+  <button id="hey" class="delbtn" value="Submit" type="submit">edit</button>
+</form>
+
+         </form>      
+    </div>   
+ </div>
+</section>
+   
+    </body>
+    <script>
+    </script>
+</html>

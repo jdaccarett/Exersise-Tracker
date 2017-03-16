@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Fit Tracker</title>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8"> <!-- character encoding -->
+        <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1"> <!-- Display webpage in edge mode/IE in highest supported document mode -->
+        <meta name=viewport content="width=device-width, initial-scale=1"> <!-- Optimizations for mobile devices -->
+
+        <!-- Google fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+
+
+        <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
+            <!--[if lt IE 9]>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"</script>
+        <![endif]-->
+    </head>
+
+    <body>
+<section id="hero">
+    <div class="container">
+
+        <nav class="navbar alignRight">
+            <ul class="nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+        </nav>
+
+    <div class="form-group">
+ 
+        <form action="/">
+  
+         <h3>Enter your Workout</h3>
+ 
+            <input type="name"
+             name="name" 
+             class="form-control" 
+             id="name" 
+             placeholder="Name of exercise" required>
+
+          <input type="reps"
+             name="reps" 
+             class="form-control" 
+             id="reps" 
+             placeholder="Enter # of repetitions" required>
+
+          <input type="weight"
+             name="weight" 
+             class="form-control" 
+             id="weight" 
+             placeholder="Enter the weight used" required>
+
+          <input type="date"
+             name="date" 
+             class="form-control" 
+             id="date" 
+             placeholder="Enter Date" required>
+             
+          <input type="lbs"
+             name="lbs" 
+             class="form-control" 
+             id="lbs" 
+             placeholder="Enter 0 for lbs 1 for kgs" required>
+
+
+          <button type="submit" id="submit" value="Submit">Click</button>
+
+         </form>
+    
+        <div class="form-group">
+            <button style="display: none;" id="next">NEXT STEP</a></button>
+        </div>        
+    </div>   
+ </div>
+</section>
+ 
+<!--TABLE DISPLAY -->
+<section>
+        <div class="table-title">
+            <h3>Completed Workouts</h3> 
+        </div>
+        <div class="table-div">
+            <table class="table-fill">
+            <thead>
+                <tr id="list" class="List">
+                    <th class="text-left">Edit</th>
+                    <th class="text-left">Delete</th>
+                    <th class="text-left">Name</th>
+                    <th class="text-left">reps</th>
+                    <th class="text-left">weight</th>
+                    <th class="text-left">date</th>
+                    <th class="text-left">lbs</th>
+                </tr>
+            </thead>
+            <tbody class="table-hover"> {{#each results}}
+                <tr>
+                    <td>
+                      <form action="/updateForm">
+  
+                          <input style="display: none;" type="name"
+                             name="name" 
+                             value ="{{name}}">
+
+                          <input style="display: none;" type="reps"
+                             name="reps" 
+                             value ="{{reps}}">
+
+                          <input style="display: none;" type="weight"
+                             name="weight" 
+                             value ="{{weight}}">
+
+
+                          <input style="display: none;" type="lbs"
+                             value ="{{lbs}}"
+                             name="lbs">
+                             
+                          <input style="display: none;" type="id"
+                             value ="{{id}}"
+                             name="id">
+
+
+                           <button id="hey" class="delbtn" value="Submit" type="submit">edit</button>
+
+                         </form>                
+                    </td>
+                    <td><form action="/delete">
+                    
+                    <button id="hey" class="delbtn" name="id" type="submit" value="{{id}}">Delete</button>
+        
+
+                    </form>
+                    </td>
+                    <td>{{name}}</td>
+                    <td>{{reps}}</td>
+                    <td>{{weight}}</td>
+                    <td>{{date}}</td>
+                    <td>{{lbs}}</td>
+
+                </tr> {{/each}} </tbody>
+        </table>
+        </div>
+        
+    </section>
+   
+    </body>
+    <script>
+    </script>
+</html>
